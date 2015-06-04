@@ -81,9 +81,7 @@
                     .insertAfter(this.element);
 
             //Transfer attributes to checkbox
-            var attr = this.element.attr("tabindex");
-            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "0");
-            attr = this.element.attr("autofocus");
+            var attr = this.element.attr("autofocus");
             if (typeof attr!=="undefined") {
                 this.buttoncheck.attr("autofocus", attr);
             }
@@ -853,11 +851,7 @@
 
             //Transfer tabindex to checkbox
             var attr = this.element.attr("tabindex");
-            if (typeof attr==="undefined") {
-                this.buttoncheck.removeAttr("tabindex");
-            } else {
-                this.buttoncheck.attr("tabindex", attr);
-            }
+            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "0");
 
             //Transfer autofocus to checkbox
             attr = this.element.attr("autofocus");
