@@ -66,18 +66,19 @@
 .ui-selectit-menu .ui-selectit-nocheck {
     background-image: none;
 }
-/* An optgroup is classified as disabled, this restores the opacity. */
-.ui-selectit-menu .ui-selectit-optgroup {
-    opacity: 100;
-	filter: Alpha(Opacity=100);
-}
 /* The UI applies a margin to disabled elements, remove this. */
 .ui-selectit-menu .ui-state-disabled {
     margin: 0px;
 }
 /* Bold the text of an optgroup. */
-.ui-selectit-menu .ui-selectit-optgroup {
+.ui-selectit-menu .ui-selectit-optgroup, 
+.ui-selectit-menu .ui-selectit-optgroupdisabled {
     font-weight: bold;
+}
+/* An optgroup is classified as disabled, this restores the opacity. */
+.ui-selectit-menu .ui-selectit-optgroup {
+    opacity: 100;
+    filter: Alpha(Opacity=100);
 }
 /* Used to apply a text-indent to items below an optgroup. */
 .ui-selectit-menu .ui-selectit-indent {
