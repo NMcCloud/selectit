@@ -321,7 +321,6 @@
                     delete this.keypressevent;
                 },
                 blur: function(event) {
-                	alert('blur');
                     if (this.cancelBlur) {
                         delete this.cancelBlur;
                         return;
