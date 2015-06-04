@@ -45,6 +45,7 @@
 /* Remove margin from all menu items, regardless if they are focused or not. */
 .ui-selectit-menu .ui-menu .ui-menu-item {
     margin: 0px;
+    filter: inherit;
 }
 /* Enforce a border on all menu items if they are not "highlighted" nor "focused". */
 .ui-selectit-menu .ui-menu .ui-menu-item {
