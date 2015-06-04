@@ -6,8 +6,10 @@ SelectIt is designed to be a replacement for the selectmenu widget provided by t
 See Demo: http://nmccloud.github.io/selectit/
 
 Compatibility:
-IE8+
-Chrome
-Firefox
-Opera
-Safari
+<ul>
+<li>IE8+</li>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Opera</li>
+<li>Safari</li>
+</ul>
