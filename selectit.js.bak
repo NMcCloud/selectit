@@ -118,6 +118,9 @@
                     .addClass("ui-selectit-hidden")
                     .insertAfter(this.buttonlabel);
 
+            //Move checkbox to within the label to allow the button (i.e. widget) to be hidden properly
+            this.buttoncheck.appendTo(this.buttonlabel);
+
             /*
              * Find all "<label>" elements associated with the select and 
              * redirect them to the checkbox.
