@@ -1004,7 +1004,7 @@
             } else {
                 ul.addClass( "ui-selectit-single" );
             }
-            this._renderMenu(ul, this.hierarchy, 0, this.selectedMenuItems);
+            this._renderMenu(ul, this.hierarchy, false, 0, this.selectedMenuItems);
 
             this.isNewMenu = true;
             this.menu.refresh();
@@ -1372,6 +1372,7 @@
                 } else {
                     var ret = that._organizeOptions(opt.children( "option,optgroup" ));
                     optionGroups[i] = {
+                    	disabled: item.disabled,
                         label: label,
                         title: title,
                         optionGroups: ret.optionGroups
@@ -1385,20 +1386,20 @@
             };
         },
         
-        _renderMenu: function(ul, items, indent, selectedLI) {
+        _renderMenu: function(ul, items, disabled, indent, selectedLI) {
             var that = this;
             $.each(items, function(index, item) {
-                var li = that._renderItem(ul, item, indent, selectedLI);
+                var li = that._renderItem(ul, item, disabled, indent, selectedLI);
                 if ($.type(item.option)!=="undefined" && item.option.selected) {
                     selectedLI[selectedLI.length] = li;
                 }
             });
         },
-        _renderItem: function(ul, item, indent, selectedLI) {
+        _renderItem: function(ul, item, disabled, indent, selectedLI) {
             var li;
             if ( $.type(item.optionGroups)==="undefined" ) {
                 li = $("<li>")
-                        .addClass( item.option.disabled ? "ui-state-disabled" : "" )
+                        .addClass( disabled || item.option.disabled ? "ui-state-disabled" : "" )
                             .append($("<span>")
                                 .addClass( "ui-selectit-checkbox ui-icon ui-corner-all ui-widget-content"
                                     + (item.option.selected ? " ui-icon-check" : " ui-selectit-nocheck") ))
@@ -1411,14 +1412,15 @@
                 }
             } else {
                 li = $("<li>")
-                        .addClass( "ui-state-disabled ui-selectit-optgroup" )
-                            .append(this._indentItem(item, indent))
+                        .addClass( "ui-state-disabled" )
+                        .addClass( disabled || item.disabled ? "ui-selectit-optgroupdisabled" : "ui-selectit-optgroup")
+                        .append(this._indentItem(item, indent))
                         .appendTo(ul);
                 //Add title if necessary
                 if (item.title!==null) {
                     li.attr("title", item.title);
                 }
-                this._renderMenu(ul, item.optionGroups, indent+1, selectedLI);
+                this._renderMenu(ul, item.optionGroups, disabled || item.disabled, indent+1, selectedLI);
             }
             return li;
         },
