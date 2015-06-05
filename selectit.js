@@ -89,7 +89,7 @@
             //Label of the button
             this.buttonlabel = $("<label>")
                     .attr("for", this.buttoncheck.attr("id"))
-                    .attr("tabindex", 0)
+                    .attr("tabindex", 1)
                     .appendTo(this.buttonwrapper);
             if (this.options.buttonClass!==null) {
                 this.buttonlabel.addClass(this.options.buttonClass);
@@ -854,7 +854,7 @@
 
             //Transfer tabindex to checkbox
             var attr = this.element.attr("tabindex");
-            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "0");
+            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "1");
 
             //Transfer autofocus to checkbox
             attr = this.element.attr("autofocus");
