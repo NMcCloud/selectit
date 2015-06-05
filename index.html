@@ -30,7 +30,9 @@
   <a href="https://github.com/NMcCloud/selectit">Back to GitHub</a>
   <h1>Examples of using SelectIt:</h1>
   <h2>Change UI Theme</h2>
-  <input><input type="checkbox" onfocus="console.log('focus')" onblur="console.log('blur')">
+  <input tabindex="1" onfocus="console.log('focusi')" onblur="console.log('bluri')">
+  <input tabindex="1" type="checkbox" onfocus="console.log('focus')" onblur="console.log('blur')">
+  <button tabindex="1">Button</button>
   <form>
   <select class="height" name="theme" onchange="$('form').submit();">
     <option><b>Select Theme</b></option>
@@ -60,7 +62,7 @@
     <option>vader</option>
   </select>
   </form>
-  <input>
+  <input tabindex="1">
   <h2>JQuery UI Selectmenu</h2>
   <select class="ui">
     <optgroup label="United States">
