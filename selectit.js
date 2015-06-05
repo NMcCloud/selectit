@@ -76,7 +76,7 @@
             //Checkbox that will maintain the state of the button
             this.buttoncheck = $("<input>")
                     .attr("type", "checkbox")
-                    .addClass("ui-selectit")// ui-helper-hidden-accessible")
+                    .addClass("ui-selectit")
                     .uniqueId()
                     .insertAfter(this.element);
 
@@ -101,6 +101,8 @@
                         icons: {secondary: "ui-icon-triangle-1-s"}
                     })
                     .data("ui-button");
+                    
+            this.buttoncheck.removeClass("ui-helper-hidden-accessible");
 
             var buttonChildren = this.buttonlabel.addClass( "ui-selectit-button" ).children();
 
