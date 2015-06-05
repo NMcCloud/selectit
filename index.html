@@ -32,8 +32,8 @@
   <h2>Change UI Theme</h2>
   <div id="d"></div>
   <input tabindex="1" onfocus="$('#d').append('focusi<br>')" onblur="$('#d').append('bluri<br>')">
-  <input tabindex="1" type="checkbox" onfocus="$('#d').append('focus<br>')" onblur="$('#d').append('blur<br>')">
-  <button tabindex="1">Button</button>
+  <input id="a" tabindex="1" type="checkbox" onfocus="$('#d').append('focus<br>')" onblur="$('#d').append('blur<br>')">
+  <button tabindex="1" onclick="$('#a').focus()">Button</button>
   <form>
   <select class="height" name="theme" onchange="$('form').submit();">
     <option><b>Select Theme</b></option>
