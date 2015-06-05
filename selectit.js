@@ -89,6 +89,7 @@
             //Label of the button
             this.buttonlabel = $("<label>")
                     .attr("for", this.buttoncheck.attr("id"))
+                    .attr("tabindex", 0)
                     .appendTo(this.buttonwrapper);
             if (this.options.buttonClass!==null) {
                 this.buttonlabel.addClass(this.options.buttonClass);
