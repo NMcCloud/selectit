@@ -854,7 +854,7 @@
 
             //Transfer tabindex to checkbox
             var attr = this.element.attr("tabindex");
-            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "1");
+            this.buttoncheck.attr("tabindex", $.type(attr)!=="undefined" ? attr : "0");
 
             //Transfer autofocus to checkbox
             attr = this.element.attr("autofocus");
