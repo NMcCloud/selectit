@@ -76,7 +76,7 @@
             //Checkbox that will maintain the state of the button
             this.buttoncheck = $("<input>")
                     .attr("type", "checkbox")
-                    .addClass("ui-selectit ui-helper-hidden-accessible")
+                    .addClass("ui-selectit")// ui-helper-hidden-accessible")
                     .uniqueId()
                     .insertAfter(this.element);
 
