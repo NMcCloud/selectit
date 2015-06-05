@@ -30,8 +30,9 @@
   <a href="https://github.com/NMcCloud/selectit">Back to GitHub</a>
   <h1>Examples of using SelectIt:</h1>
   <h2>Change UI Theme</h2>
-  <input tabindex="1" onfocus="console.log('focusi')" onblur="console.log('bluri')">
-  <input tabindex="1" type="checkbox" onfocus="console.log('focus')" onblur="console.log('blur')">
+  <div id="d"></div>
+  <input tabindex="1" onfocus="$('#d').append('focusi<br>')" onblur="$('#d').append('bluri<br>')">
+  <input tabindex="1" type="checkbox" onfocus="$('#d').append('focus<br>')" onblur="$('#d').append('blur<br>')">
   <button tabindex="1">Button</button>
   <form>
   <select class="height" name="theme" onchange="$('form').submit();">
